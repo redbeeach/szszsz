@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>웹디자이너 포토폴리오</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function() {
+            var menu = $('#top_menu .hd_inner > ul > li');
+            var contents = $('.sz_index');
+
+            menu.click(function(e) {
+                e.preventDefault();
+
+                var tg = $(this);
+                var i = tg.index();
+
+                var section = contents.eq(i);
+                var tt = section.offset().top;
+                tt = tt - 100; //메뉴 높이 반영
+                $('html, body').stop().animate({
+                    scrollTop: tt
+                });
+            });
+
+            $(window).scroll(function() {
+                var sct = $(window).scrollTop();
+                var bg_color = $('#top_menu');
+
+                contents.each(function() {
+                    var tg = $(this);
+                    var i = tg.index();
+
+                    if (tg.offset().top <= sct + 100) {
+                        // content별 메뉴명 색상을 바꿔준다.
+                        menu.removeClass('on');
+                        menu.eq(i).addClass('on');
+
+                        //각 content별로 메뉴 background-color를 바꾼다.
+                        bg_color.removeClass();
+                        if (i == 0) {
+                            bg_color.addClass('red');
+                        } else if (i == 1) {
+                            bg_color.addClass('pink');
+                        } else {
+                            bg_color.addClass('green');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- loader  -->
+    <div class="wrapper">
+        <div class="loader"></div>
+    </div>
+    <div class="container">
+        <!-- nav  -->
+        <header id="top_menu" class="nav-up">
+            <div class="hd_inner clearfix">
+                <div class="logo"><img src="images/images/logo.png" alt=""></div>
+                <ul>
+                    <li class="on"><a href="javascript:;">Home</a></li>
+                    <li><a href="javascript:;">About</a></li>
+                    <li><a href="javascript:;">Portfolio</a></li>
+                    <li><a href="javascript:;">Vision</a></li>
+                    <li><a href="javascript:;">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        <div id="contents">
+            <div class="mv_wrap sz_index">
+                <div class="wrapper-img">
+                    <!--                <img class="image" src="images/images/mv_1.jpg">-->
+                    <div class="sc">
+                        <div class="header">
+                            <h1 class="header-0">WEB DESIGNER PORTFOLIO</h1>
+                            <h1 class="header-1">THINK, CREATE</h1>
+                            <h1 class="header-2">AND MAKE IT BETTER.</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll_down">
+                    <a href="javascript:;" class="mouse">
+                        <div class="mouse_img"><img src="images/images/scroll.png" alt=""></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sz_box1 sz_index">
+                <div class="sz1 sc">
+                    <div class="sz_tx1bx">
+                        <div class="sub_title">INTURODUCE MYSELF</div>
+                        <div class="sub_title2">About me</div>
+                    </div>
+                    <div class="sz1_right">
+                        <div class="sz1_gdgd clearfix">
+                            <div class="sz1_inner clearfix">
+                                <ul class="sz1_ul">
+                                    <li class="ri_title">PROFILE</li>
+                                    <li class="rs_title">NAME</li>
+                                    <li class="rs_title">AGES </li>
+                                    <li class="rs_title">PHONE</li>
+                                    <li class="rs_title">ADDRESS</li>
+                                    <li class="rs_title">EMAIL</li>
+                                </ul>
+                                <ul class="sz1_ul1">
+                                    <li>오승주</li>
+                                    <li>25 (1997.07.05)</li>
+                                    <li>010-6458-7072</li>
+                                    <li>경기도 부천</li>
+                                    <li>osngzu@naver.com</li>
+                                </ul>
+                            </div>
+                            <div class="sz1_inner clearfix">
+                                <ul class="sz1_ul">
+                                    <li class="ri_title">LICENSE</li>
+                                    <li class="rs_title">2021. 07.</li>
+                                    <li class="rs_title">2021. 08.</li>
+                                    <li class="rs_title">2021. 09.</li>
+                                </ul>
+                                <ul class="sz1_ul1">
+                                    <li>웹디자인기능사</li>
+                                    <li>GTQ포토샵1급</li>
+                                    <li>GTQ일러스트1급</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sz1_bottom clearfix">
+                            <div class="sz1_inner clearfix">
+                                <ul class="sz1_ul">
+                                    <li class="ri_title">CAREER</li>
+                                    <li class="rs_title">2017.10. ~ 2018.04.</li>
+                                    <li class="rs_title">2019.01. ~ 2021.05.</li>
+                                </ul>
+                                <ul class="sz1_ul1">
+                                    <li>SBS아카데미학원 웹퍼블리셔 과정 수료</li>
+                                    <li>주식회사 모든세븐 디자인 부서 근무</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sz_box2 sz_index">
+                <div class="sc">
+                    <div class="sz_tx1bx">
+                        <div class="sub_title">WEB DESIGN</div>
+                        <div class="sub_title2">Portfolio</div>
+                    </div>
+                    <div class="sz_portfolio">
+                        <ul class="clearfix">
+                            <li>
+                                <a href=""><img src="images/images/sz2_img01.jpg" alt="">
+                                    <p>한국가구 카르텔</p>
+                                </a>
+                            </li>
+                            <li><a href=""><img src="images/images/sz2_img02.jpg" alt="">
+                                    <p>글라이트</p>
+                                </a></li>
+                            <li><a href=""><img src="images/images/sz2_img03.jpg" alt="">
+                                    <p>뷰티아이라인 아카데미</p>
+                                </a></li>
+                            <li><a href=""><img src="images/images/sz2_img04.jpg" alt="">
+                                    <p>셀녹</p>
+                                </a></li>
+                            <li><a href=""><img src="images/images/sz2_img05.jpg" alt="">
+                                    <p>동네방네</p>
+                                </a></li>
+                            <li><a href=""><img src="images/images/sz2_img06.jpg" alt="">
+                                    <p>경기도사격테마파크</p>
+                                </a></li>
+                        </ul>
+                        <a href="" class="sz_btn">MORE VIEW +</a>
+                    </div>
+                </div>
+            </div>
+            <div class="szbox3 sz_index">
+                <div class="sc">
+                    <div class="sz_tx1bx">
+                        <div class="sub_title">준비된 웹디자이너</div>
+                        <div class="sub_title2">Vision</div>
+                    </div>
+                    <p class="vision_tx">안녕하세요. 웹을 즐기는 웹디자이너 오승주입니다.<br>
+                        저는 <strong>좋은 웹사이트(Good Wed)를 만드는 것</strong>이 저의 목표입니다.<br>
+                        이를 위해 웹 디자이너로서 안목을 높이기 위해서 항상 공부하는 자세로 수 많은 웹 사이트를 접하고 분사하며 제 것으로 만드는 것을 즐깁니다.<br>
+                        좋은 웹 사이트란 웹 사이트의 목적에 맞는 필요한 요소만을 재료로 사용하여 직관적이며 빠르고,<br>
+                        모든 이들이 이용할수 있는 것이라고 생각합니다.<br>
+                        항상 더 많은 것을 보고 배우며 한발 앞서나가는 웹디자이너가 되기 위해 노력하겠습니다!
+                    </p>
+                </div>
+            </div>
+            <div class="szbox4 sz_index">
+                <div class="sc">
+                    <div class="sz_tx1bx">
+                        <div class="sub_title">LOOKING FORWARD TO CONTACT</div>
+                        <div class="sub_title2">Contact me</div>
+                        <div class="sub_title3">당신의 소중한 연락을 기다립니다!</div>
+                    </div>
+                    <ul class="clearfix">
+                        <li><img src="images/images/sz4_icon01.png" alt=""><h1>EMAIL</h1><p>osngzu@naver.com</p></li>
+                        <li><img src="images/images/sz4_icon02.png" alt=""><h1>PHONE</h1><p>010-6458-7072</p></li>
+                        <li><img src="images/images/sz4_icon03.png" alt=""><h1>KAKAO</h1><p>ID : sngzu</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer>
+    
+    
+</footer>
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        function mouse() {
+            $(".mouse").animate({
+                top: '-10px'
+            }, 500).animate({
+                top: '0'
+            }, 500, mouse);
+        }
+        mouse();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>
+        var textWrapper = document.querySelector('.header-0');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline()
+            .add({
+                targets: '.header-0 .letter',
+                translateY: [200, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 2000,
+                delay: (el, i) => 4800 + 50 * i
+            });
+        var textWrapper = document.querySelector('.header-1');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline()
+            .add({
+                targets: '.header-1 .letter',
+                translateY: [200, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 2000,
+                delay: (el, i) => 4800 + 50 * i
+            });
+
+        var textWrapper = document.querySelector('.header-2');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline()
+            .add({
+                targets: '.header-2 .letter',
+                translateY: [200, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 2000,
+                delay: (el, i) => 4800 + 50 * i
+            });
+
+        TweenMax.to(".wrapper", 2, {
+            top: "-100%",
+            ease: Expo.easeInOut,
+            delay: 3.6
+        });
+
+        var tl = new TimelineMax();
+
+        tl.from(".loader", 1.6, {
+            scaleY: "0%",
+            y: 80,
+            ease: Expo.easeInOut,
+            delay: 1,
+            transformOrigin: "50% 100%"
+        });
+
+        tl.to(".loader", 1.6, {
+            height: "20vh",
+            scaleY: "0%",
+            ease: Expo.easeInOut,
+            transformOrigin: "0% -100%"
+        });
+
+        TweenMax.to(".box", 2.4, {
+            y: "-100%",
+            ease: Expo.easeInOut,
+            delay: 3.8,
+        });
+
+        var tl = new TweenMax.staggerFrom(".menu > div", 2, {
+            opacity: 0,
+            y: 30,
+            ease: Expo.easeInOut,
+            delay: 4.2
+        }, 0.1);
+
+        var tl = new TweenMax.staggerFrom(".hero-container > div", 2, {
+            opacity: 0,
+            y: 30,
+            ease: Expo.easeInOut,
+            delay: 4.2
+        }, 0.1);
+    </script>
+</body></html>
